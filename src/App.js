@@ -1,11 +1,11 @@
 import React from 'react';
-import Basket from './pages/basket';
+import Home from './pages/home';
 import GlobalStyle from './styles/globalStyles';
 
 const App = () => (
   <>
     <GlobalStyle />
-    <Basket />
+    <Home />
   </>
 );
 

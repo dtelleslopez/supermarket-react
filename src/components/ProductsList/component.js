@@ -1,10 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Product } from './styles';
+import Product from '../Product';
+import { Container } from './styles';
 
 const ProductsList = ({ products }) => (
   <Container>
-    {products.map(({ name }) => <Product key={name}>{name}</Product>)}
+    {products.map(({ name, price, unit }) => (
+      <Product
+        key={name}
+        name={name}
+        price={price}
+        unit={unit}
+      />
+    ))}
   </Container>
 );
 

@@ -5,7 +5,6 @@ import { Container } from './styles';
 function Home() {
   return (
     <Container>
-      Home
       <ProductsList />
     </Container>
   );

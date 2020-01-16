@@ -1,29 +1,10 @@
-import { ADD_PRODUCT } from '../constants/action-types';
+import { combineReducers } from 'redux';
+import productsReducer from './products';
+import basketReducer from './basket';
 
-const initialState = {
-  products: [{
-    name: 'Beans',
-    price: 0.50,
-    unit: 'each',
-  }, {
-    name: 'Coke',
-    price: 0.70,
-    unit: 'each',
-  }, {
-    name: 'Oranges',
-    price: 1.99,
-    unit: 'kilo',
-  }],
-};
-
-function rootReducer(state = initialState, action) {
-  if (action.type === ADD_PRODUCT) {
-    return {
-      ...state,
-      products: state.products.concat(action.payload),
-    };
-  }
-  return state;
-}
+const rootReducer = combineReducers({
+  products: productsReducer,
+  basket: basketReducer,
+});
 
 export default rootReducer;

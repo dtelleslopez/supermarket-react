@@ -1,5 +1,9 @@
-const getUnitType = (unit) => {
-  if (unit === 'kilo') {
+const getUnitType = (unit = '') => {
+  if (!unit || typeof unit !== 'string') {
+    return '';
+  }
+
+  if (unit.toLowerCase() === 'kilo') {
     return '/Kg';
   }
 

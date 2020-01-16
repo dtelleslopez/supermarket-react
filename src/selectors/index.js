@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
 export const getProducts = (state) => state.products;
+export const getBuket = (state) => state.buket;

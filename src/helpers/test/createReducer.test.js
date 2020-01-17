@@ -10,12 +10,15 @@ describe('createReducer function', () => {
     reducer = createReducer(undefined, {});
     expect(reducer()).toStrictEqual({});
     expect(reducer(null, { age: 18 })).toStrictEqual({});
-    expect(reducer([], null)).toStrictEqual({});
+    expect(reducer([], null)).toStrictEqual([]);
     expect(reducer({}, { type: null })).toStrictEqual({});
     expect(reducer({}, { type: 'ADD_TODO' })).toStrictEqual({});
   });
 
   test('It should return a valid reducer', () => {
-    expect(typeof createReducer()).toBe('function');
+    let reducer = createReducer();
+    expect(typeof reducer).toBe('function');
+    reducer = createReducer([], { ADD_TODO: () => null });
+    expect(reducer({}, { type: 'ADD_TODO' })).toBe(null);
   });
 });

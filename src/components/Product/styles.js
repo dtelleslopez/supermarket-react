@@ -30,7 +30,9 @@ export const Details = styled.div`
 
 export const Name = styled.span``;
 
-export const Price = styled.span``;
+export const Price = styled.span`
+  font-weight: bold;
+`;
 
 export const Actions = styled.div`
   margin-top: 6px;

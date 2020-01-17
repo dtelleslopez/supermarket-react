@@ -1,6 +1,6 @@
 function createReducer(initialState = {}, handlers = {}) {
   return function reducer(state = initialState, action = {}) {
-    if (!state || typeof state !== 'object' || Array.isArray(state)) {
+    if (!state || typeof state !== 'object') {
       return {};
     }
 

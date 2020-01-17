@@ -28,11 +28,7 @@ const Item = ({
             <Name>{name}</Name>
           </Row>
           <Row>
-            <Quantity>
-              Quantity:
-              {' '}
-              {quantity}
-            </Quantity>
+            <Quantity>{quantity}</Quantity>
           </Row>
         </Column>
         <Column align="right">

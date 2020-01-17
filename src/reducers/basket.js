@@ -1,15 +1,31 @@
 import createReducer from '../helpers/createReducer';
-import addItemInArray from '../helpers/addItemInArray';
-import deleteItemInArray from '../helpers/deleteItemInArray';
+import addItemInArray from '../functions/addItemInArray';
+import deleteItemInArray from '../functions/deleteItemInArray';
+import getSubTotal from '../functions/getSubTotal';
 
-const initialState = [];
+const initialState = {
+  items: [],
+  subTotal: 0,
+};
 
 function addItem(basketState, action) {
-  return addItemInArray(basketState, action.payload);
+  const items = addItemInArray(basketState.items, action.payload);
+
+  return {
+    ...basketState,
+    subTotal: getSubTotal(items),
+    items,
+  };
 }
 
 function deleteItem(basketState, action) {
-  return deleteItemInArray(basketState, action.payload);
+  const items = deleteItemInArray(basketState.items, action.payload);
+
+  return {
+    ...basketState,
+    subTotal: getSubTotal(items),
+    items,
+  };
 }
 
 const basketReducer = createReducer(initialState, {

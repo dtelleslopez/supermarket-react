@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
+import { getBasketItems, getBasketSubTotal } from '../../selectors';
 import BasketList from './component';
-import { getBasket } from '../../selectors';
 
 const mapStateToProps = (state) => ({
-  basket: getBasket(state),
+  items: getBasketItems(state),
+  subTotal: getBasketSubTotal(state),
 });
 
 export default connect(mapStateToProps)(BasketList);

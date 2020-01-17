@@ -1,4 +1,4 @@
-import isValidItem from './isValidItem';
+import isValidItem from '../helpers/isValidItem';
 
 const addItemInArray = (array = [], item = {}) => {
   if (!Array.isArray(array)) {

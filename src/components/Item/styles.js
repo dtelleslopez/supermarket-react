@@ -22,9 +22,11 @@ export const Delete = styled.button`
   cursor: pointer;
   font-size: 8px;
   height: 16px;
+  line-height: 18px;
   margin-left: 10px;
   outline: none;
   padding: 0;
+  vertical-align: middle;
   width: 16px;
 
   &:hover {

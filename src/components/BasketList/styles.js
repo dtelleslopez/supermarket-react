@@ -9,9 +9,16 @@ export const Container = styled.div`
   padding: 10px;
 `;
 
-export const Items = styled.div`
+export const Divider = styled.div`
   border-bottom: 1px solid ${Theme.LIGHT_GRAY};
-  margin-bottom: 10px;
+  margin: 10px 0 10px;
+`;
+
+export const Items = styled.div`
+  & > :last-child {
+    border-bottom: 1px solid ${Theme.LIGHT_GRAY};
+    padding-bottom: 10px;
+  }
 `;
 
 export const SubTotal = styled.span`

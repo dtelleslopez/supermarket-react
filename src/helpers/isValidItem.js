@@ -1,4 +1,5 @@
 import isNumber from './isNumber';
+import unitTypes from '../constants/unitTypes';
 
 const isValidItem = (item) => item !== undefined
   && item !== null
@@ -13,7 +14,7 @@ const isValidItem = (item) => item !== undefined
   && isNumber(item.price)
   && item.price > 0
   && typeof item.unit === 'string'
-  && ['each', 'kilo'].includes(item.unit.toLowerCase())
+  && [unitTypes.EACH, unitTypes.KILO].includes(item.unit.toUpperCase())
   && isNumber(item.quantity);
 
 export default isValidItem;

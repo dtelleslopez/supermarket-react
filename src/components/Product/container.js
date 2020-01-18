@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { ADD_ITEM } from '../../constants/action-types';
+import { addItem } from '../../actions';
 import Product from './component';
 
 const mapDispatchToProps = (dispatch) => ({
-  addItem: (item) => dispatch({ type: ADD_ITEM, payload: item }),
+  addItem: (item) => dispatch(addItem(item)),
 });
 
 export default connect(null, mapDispatchToProps)(Product);

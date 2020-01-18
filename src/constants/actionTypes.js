@@ -1,0 +1,12 @@
+// ITEMS
+const ADD_ITEM = 'ADD_ITEM';
+const DELETE_ITEM = 'DELETE_ITEM';
+
+// SAVINGS
+const UPDATE_TOTAL_SAVINGS = 'UPDATE_TOTAL_SAVINGS';
+
+export default Object.freeze({
+  ADD_ITEM,
+  DELETE_ITEM,
+  UPDATE_TOTAL_SAVINGS,
+});

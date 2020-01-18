@@ -1,25 +1,8 @@
 import createReducer from '../helpers/createReducer';
+import mockProducts from '../mock/products';
 
-const initialState = [{
-  name: 'Beans',
-  price: 0.50,
-  unit: 'each',
-}, {
-  name: 'Coke',
-  price: 0.70,
-  unit: 'each',
-}, {
-  name: 'Oranges',
-  price: 1.99,
-  unit: 'kilo',
-}];
+const initialState = [...mockProducts];
 
-function addProduct(productsState, action) {
-  return productsState.concat(action.payload);
-}
-
-const productsReducer = createReducer(initialState, {
-  ADD_PRODUCT: addProduct,
-});
+const productsReducer = createReducer(initialState);
 
 export default productsReducer;

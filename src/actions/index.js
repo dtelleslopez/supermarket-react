@@ -1,6 +1,15 @@
-import { ADD_PRODUCT } from '../constants/action-types';
+import actionTypes from '../constants/actionTypes';
 
-// eslint-disable-next-line import/prefer-default-export
-export function addProduct(payload) {
-  return { type: ADD_PRODUCT, payload };
+// ITEMS
+export function addItem(payload) {
+  return { type: actionTypes.ADD_ITEM, payload };
+}
+
+export function deleteItem(payload) {
+  return { type: actionTypes.DELETE_ITEM, payload };
+}
+
+// SAVINGS
+export function updateTotalSavings(payload) {
+  return { type: actionTypes.UPDATE_TOTAL_SAVINGS, payload };
 }

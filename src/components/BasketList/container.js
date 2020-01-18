@@ -1,10 +1,16 @@
 import { connect } from 'react-redux';
-import { getBasketItems, getBasketSubTotal } from '../../selectors';
+import { getItems, getSubTotal, getTotalSavings } from '../../selectors';
+import { updateTotalSavings } from '../../actions';
 import BasketList from './component';
 
 const mapStateToProps = (state) => ({
-  items: getBasketItems(state),
-  subTotal: getBasketSubTotal(state),
+  items: getItems(state),
+  subTotal: getSubTotal(state),
+  totalSavings: getTotalSavings(state),
 });
 
-export default connect(mapStateToProps)(BasketList);
+const mapDispatchToProps = (dispatch) => ({
+  updateTotalSavings: (items) => dispatch(updateTotalSavings(items)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BasketList);

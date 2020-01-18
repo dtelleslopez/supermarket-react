@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import { DELETE_ITEM } from '../../constants/action-types';
+import { deleteItem } from '../../actions';
 import Item from './component';
 
 const mapDispatchToProps = (dispatch) => ({
-  deleteItem: (item) => dispatch({ type: DELETE_ITEM, payload: item }),
+  deleteItem: (item) => dispatch(deleteItem(item)),
 });
 
 export default connect(null, mapDispatchToProps)(Item);

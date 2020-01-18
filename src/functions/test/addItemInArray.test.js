@@ -1,4 +1,5 @@
 import addItemInArray from '../addItemInArray';
+import mockProducts from '../../mock/products';
 
 describe('addItemInArray function', () => {
   test('It should return an empty array', () => {
@@ -13,13 +14,8 @@ describe('addItemInArray function', () => {
   });
 
   test('It should return an array with the correct elements', () => {
-    const oranges = {
-      name: 'Oranges', price: 1.99, unit: 'kilo', quantity: 1,
-    };
-
-    const coke = {
-      name: 'Coke', price: 0.70, unit: 'each', quantity: 1,
-    };
+    const coke = { ...mockProducts[1], quantity: 1 };
+    const oranges = { ...mockProducts[2], quantity: 1 };
 
     expect(addItemInArray([], oranges)).toStrictEqual([oranges]);
     expect(addItemInArray([{ ...oranges }], oranges)).toStrictEqual([{ ...oranges, quantity: 2 }]);

@@ -1,4 +1,5 @@
 import createReducer from '../helpers/createReducer';
+import actionTypes from '../constants/actionTypes';
 import addItemInArray from '../functions/addItemInArray';
 import deleteItemInArray from '../functions/deleteItemInArray';
 import getSubTotal from '../functions/getSubTotal';
@@ -29,8 +30,8 @@ function deleteItem(basketState, action) {
 }
 
 const basketReducer = createReducer(initialState, {
-  ADD_ITEM: addItem,
-  DELETE_ITEM: deleteItem,
+  [actionTypes.ADD_ITEM]: addItem,
+  [actionTypes.DELETE_ITEM]: deleteItem,
 });
 
 export default basketReducer;

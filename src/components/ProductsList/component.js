@@ -4,7 +4,7 @@ import Product from '../Product';
 import { Container } from './styles';
 
 const ProductsList = ({ products }) => (
-  <Container>
+  <Container data-cy="products-list">
     {products.map(({ name, price, unit }) => (
       <Product
         key={name}

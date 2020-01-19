@@ -17,7 +17,7 @@ const BasketList = ({
 
   return (
     <Container>
-      <Items>
+      <Items data-cy="products-items">
         {items.map(({
           name, price, unit, quantity,
         }) => (
@@ -35,7 +35,7 @@ const BasketList = ({
           <Total>Sub-total</Total>
         </Column>
         <Column align="right">
-          <Total>
+          <Total data-cy="sub-total">
             £
             {subTotal}
           </Total>
@@ -44,7 +44,7 @@ const BasketList = ({
       {totalSavings !== 0 && (
         <>
           <Divider />
-          <Items>
+          <Items data-cy="offers-items">
             {appliedSavings.map(({ name, discount }) => (
               <OfferItem
                 key={name}
@@ -58,7 +58,7 @@ const BasketList = ({
               <Total>Total savings</Total>
             </Column>
             <Column align="right">
-              <Total>
+              <Total data-cy="total-savings">
                 £-
                 {totalSavings}
               </Total>
@@ -72,7 +72,7 @@ const BasketList = ({
           <Total>Total to pay</Total>
         </Column>
         <Column align="right">
-          <Total>
+          <Total data-cy="total-to-pay">
             £
             {fixTwoDecimals(subTotal - totalSavings)}
           </Total>

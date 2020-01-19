@@ -37,7 +37,7 @@ const ProductItem = ({
             {price}
             {unitType(unit)}
           </Price>
-          <Delete onClick={handleOnClick}>✕</Delete>
+          <Delete data-cy="delete-product" onClick={handleOnClick}>✕</Delete>
         </Column>
       </Row>
     </Container>

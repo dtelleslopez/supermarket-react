@@ -34,7 +34,7 @@ const Product = ({
       </Details>
       <Actions>
         <Quantity ref={quantityRef} type="number" defaultValue="1" min="0" />
-        <Button onClick={handleOnClick}>Add</Button>
+        <Button data-cy="add-product" onClick={handleOnClick}>Add</Button>
       </Actions>
     </Container>
   );

@@ -6,7 +6,7 @@ import {
   Container, Name, Quantity, Price, Delete,
 } from './styles';
 
-const Item = ({
+const ProductItem = ({
   name, price, unit, quantity, deleteItem,
 }) => {
   const handleOnClick = () => {
@@ -44,7 +44,7 @@ const Item = ({
   );
 };
 
-Item.propTypes = {
+ProductItem.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   unit: PropTypes.string.isRequired,
@@ -52,4 +52,4 @@ Item.propTypes = {
   deleteItem: PropTypes.func.isRequired,
 };
 
-export default Item;
+export default ProductItem;

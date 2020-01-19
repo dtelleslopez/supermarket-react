@@ -1,4 +1,4 @@
-import isValidItem from '../helpers/isValidItem';
+import isValidProduct from '../helpers/isValidProduct';
 
 const getSubTotal = (items = []) => {
   if (!Array.isArray(items)) {
@@ -6,7 +6,7 @@ const getSubTotal = (items = []) => {
   }
 
   return items.reduce((acc, curr) => {
-    if (!isValidItem(curr)) {
+    if (!isValidProduct(curr)) {
       return acc;
     }
 

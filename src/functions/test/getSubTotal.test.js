@@ -1,7 +1,7 @@
 import getSubTotal from '../getSubTotal';
 import mockProducts from '../../mock/products';
 
-describe('getSubTotal.test function', () => {
+describe('getSubTotal function', () => {
   const coke = { ...mockProducts[1], quantity: 1 };
   const oranges = { ...mockProducts[2], quantity: 1 };
 

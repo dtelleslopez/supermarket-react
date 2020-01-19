@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Item from '../Item';
+import fixTwoDecimals from '../../helpers/fixTwoDecimals';
+import ProductItem from '../ProductItem';
+import OfferItem from '../OfferItem';
 import { Row, Column } from '../../styles/grid';
 import {
-  Container, Divider, Items, SubTotal,
+  Container, Divider, Items, Total,
 } from './styles';
 
 const BasketList = ({
-  items, subTotal, totalSavings, updateTotalSavings,
+  items, subTotal, appliedSavings, totalSavings, updateTotalSavings,
 }) => {
   useEffect(() => {
     updateTotalSavings(items);
@@ -19,7 +21,7 @@ const BasketList = ({
         {items.map(({
           name, price, unit, quantity,
         }) => (
-          <Item
+          <ProductItem
             key={name}
             name={name}
             price={price}
@@ -29,36 +31,51 @@ const BasketList = ({
         ))}
       </Items>
       <Row>
-        <Column>Sub-total</Column>
+        <Column>
+          <Total>Sub-total</Total>
+        </Column>
         <Column align="right">
-          <SubTotal>
+          <Total>
             £
             {subTotal}
-          </SubTotal>
+          </Total>
         </Column>
       </Row>
-      {/* totalSavings !== 0 */ true && (
+      {totalSavings !== 0 && (
         <>
           <Divider />
+          <Items>
+            {appliedSavings.map(({ name, discount }) => (
+              <OfferItem
+                key={name}
+                name={name}
+                discount={discount}
+              />
+            ))}
+          </Items>
           <Row>
-            <Column>Total savings</Column>
+            <Column>
+              <Total>Total savings</Total>
+            </Column>
             <Column align="right">
-              <SubTotal>
-                £
+              <Total>
+                £-
                 {totalSavings}
-              </SubTotal>
+              </Total>
             </Column>
           </Row>
         </>
       )}
       <Divider />
       <Row>
-        <Column>Total to pay</Column>
+        <Column>
+          <Total>Total to pay</Total>
+        </Column>
         <Column align="right">
-          <SubTotal>
+          <Total>
             £
-            {subTotal + totalSavings}
-          </SubTotal>
+            {fixTwoDecimals(subTotal - totalSavings)}
+          </Total>
         </Column>
       </Row>
     </Container>
@@ -73,6 +90,10 @@ BasketList.propTypes = {
     quantity: PropTypes.number.isRequired,
   })).isRequired,
   subTotal: PropTypes.number.isRequired,
+  appliedSavings: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    discount: PropTypes.number.isRequired,
+  })).isRequired,
   totalSavings: PropTypes.number.isRequired,
   updateTotalSavings: PropTypes.func.isRequired,
 };

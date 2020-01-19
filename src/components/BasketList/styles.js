@@ -21,6 +21,6 @@ export const Items = styled.div`
   }
 `;
 
-export const SubTotal = styled.span`
+export const Total = styled.span`
   font-weight: bold;
 `;

@@ -1,4 +1,4 @@
-import isValidItem from '../helpers/isValidItem';
+import isValidProduct from '../helpers/isValidProduct';
 
 const addItemInArray = (array = [], item = {}) => {
   if (!Array.isArray(array)) {
@@ -7,7 +7,7 @@ const addItemInArray = (array = [], item = {}) => {
 
   const newArray = [...array];
 
-  if (isValidItem(item) && item.quantity > 0) {
+  if (isValidProduct(item) && item.quantity > 0) {
     const index = newArray.findIndex(({ name }) => name === item.name);
 
     if (index > -1) {

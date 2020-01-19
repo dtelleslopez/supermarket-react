@@ -1,6 +1,7 @@
 import createReducer from '../helpers/createReducer';
 import actionTypes from '../constants/actionTypes';
 import getAppliedSavings from '../functions/getAppliedSavings';
+import getTotalSavings from '../functions/getTotalSavings';
 import mockOffers from '../mock/offers';
 
 const initialState = {
@@ -14,7 +15,10 @@ function updateTotalSavings(savingsState, action) {
 
   return {
     ...savingsState,
-    applied,
+    ...{
+      applied,
+      totalSavings: getTotalSavings(applied),
+    },
   };
 }
 

@@ -28,7 +28,7 @@ const Product = ({
         <Name>{name}</Name>
         <Price>
           £
-          {price}
+          {price / 100}
           {getUnitType(unit)}
         </Price>
       </Details>

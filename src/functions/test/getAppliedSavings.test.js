@@ -23,23 +23,23 @@ describe('getAppliedSavings function', () => {
     expect(getAppliedSavings(
       [{ ...coke, quantity: 5 }, { ...beans, quantity: 'John' }, { ...oranges, quantity: 5 }],
       [cokeOffer, beansOffer],
-    )).toStrictEqual([{ ...cokeOffer, discount: 0.80 }]);
+    )).toStrictEqual([{ ...cokeOffer, discount: 80 }]);
   });
 
   test('It should return the correct amount', () => {
     expect(getAppliedSavings([{ ...coke, quantity: 2 }], [cokeOffer]))
-      .toStrictEqual([{ ...cokeOffer, discount: 0.40 }]);
+      .toStrictEqual([{ ...cokeOffer, discount: 40 }]);
     expect(getAppliedSavings([{ ...coke, quantity: 4 }], [cokeOffer]))
-      .toStrictEqual([{ ...cokeOffer, discount: 0.80 }]);
+      .toStrictEqual([{ ...cokeOffer, discount: 80 }]);
     expect(getAppliedSavings([{ ...coke, quantity: 5 }, { ...beans, quantity: 3 }], [cokeOffer]))
-      .toStrictEqual([{ ...cokeOffer, discount: 0.80 }]);
+      .toStrictEqual([{ ...cokeOffer, discount: 80 }]);
     expect(getAppliedSavings(
       [{ ...coke, quantity: 5 }, { ...beans, quantity: 3 }],
       [cokeOffer, beansOffer],
-    )).toStrictEqual([{ ...cokeOffer, discount: 0.80 }, { ...beansOffer, discount: 0.50 }]);
+    )).toStrictEqual([{ ...cokeOffer, discount: 80 }, { ...beansOffer, discount: 50 }]);
     expect(getAppliedSavings(
       [{ ...coke, quantity: 5 }, { ...beans, quantity: 3 }, { ...oranges, quantity: 5 }],
       [cokeOffer, beansOffer],
-    )).toStrictEqual([{ ...cokeOffer, discount: 0.80 }, { ...beansOffer, discount: 0.50 }]);
+    )).toStrictEqual([{ ...cokeOffer, discount: 80 }, { ...beansOffer, discount: 50 }]);
   });
 });

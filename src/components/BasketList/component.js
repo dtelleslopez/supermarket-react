@@ -37,7 +37,7 @@ const BasketList = ({
         <Column align="right">
           <Total data-cy="sub-total">
             £
-            {subTotal}
+            {subTotal / 100}
           </Total>
         </Column>
       </Row>
@@ -60,7 +60,7 @@ const BasketList = ({
             <Column align="right">
               <Total data-cy="total-savings">
                 £-
-                {totalSavings}
+                {totalSavings / 100}
               </Total>
             </Column>
           </Row>
@@ -74,7 +74,7 @@ const BasketList = ({
         <Column align="right">
           <Total data-cy="total-to-pay">
             £
-            {fixTwoDecimals(subTotal - totalSavings)}
+            {fixTwoDecimals(subTotal - totalSavings) / 100}
           </Total>
         </Column>
       </Row>

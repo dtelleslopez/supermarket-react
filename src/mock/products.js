@@ -2,15 +2,15 @@ import unitTypes from '../constants/unitTypes';
 
 const products = [{
   name: 'Beans',
-  price: 0.50,
+  price: 50,
   unit: unitTypes.EACH,
 }, {
   name: 'Coke',
-  price: 0.70,
+  price: 70,
   unit: unitTypes.EACH,
 }, {
   name: 'Oranges',
-  price: 1.99,
+  price: 199,
   unit: unitTypes.KILO,
 }];
 

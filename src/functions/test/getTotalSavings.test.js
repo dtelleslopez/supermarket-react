@@ -11,7 +11,7 @@ describe('getTotalSavings function', () => {
     expect(getTotalSavings(undefined)).toBe(0);
     expect(getTotalSavings({})).toBe(0);
     expect(getTotalSavings('John')).toBe(0);
-    expect(getTotalSavings(1.99)).toBe(0);
+    expect(getTotalSavings(199)).toBe(0);
     expect(getTotalSavings([])).toBe(0);
     expect(getTotalSavings([{ ...cokeOffer }])).toBe(0);
     expect(getTotalSavings([{ ...cokeOffer, discount: undefined }])).toBe(0);
@@ -21,21 +21,21 @@ describe('getTotalSavings function', () => {
   });
 
   test('It should return the correct amount', () => {
-    expect(getTotalSavings([{ ...cokeOffer, discount: 0.5 }])).toBe(0.50);
+    expect(getTotalSavings([{ ...cokeOffer, discount: 50 }])).toBe(50);
     expect(getTotalSavings([{
       ...cokeOffer,
-      discount: 0.5,
+      discount: 50,
     }, {
       ...beansOffer,
-      discount: 0.4,
-    }])).toBe(0.90);
+      discount: 40,
+    }])).toBe(90);
     expect(getTotalSavings([{
       ...cokeOffer,
-      discount: 0.5,
+      discount: 50,
     }, {
       ...beansOffer,
       discount: 'John',
-    }])).toBe(0.50);
-    expect(getTotalSavings([{ ...cokeOffer, discount: 0.5 }])).toBe(0.5);
+    }])).toBe(50);
+    expect(getTotalSavings([{ ...cokeOffer, discount: 50 }])).toBe(50);
   });
 });

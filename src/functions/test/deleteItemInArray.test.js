@@ -7,9 +7,9 @@ describe('deleteItemInArray function', () => {
     expect(deleteItemInArray([], {})).toStrictEqual([]);
     expect(deleteItemInArray()).toStrictEqual([]);
     expect(deleteItemInArray(null, null)).toStrictEqual([]);
-    expect(deleteItemInArray(1.99, 0.70)).toStrictEqual([]);
-    expect(deleteItemInArray(1.99, 'John')).toStrictEqual([]);
-    expect(deleteItemInArray('John', 1.99)).toStrictEqual([]);
+    expect(deleteItemInArray(199, 70)).toStrictEqual([]);
+    expect(deleteItemInArray(199, 'John')).toStrictEqual([]);
+    expect(deleteItemInArray('John', 199)).toStrictEqual([]);
     expect(deleteItemInArray('John', 'Doe')).toStrictEqual([]);
   });
 

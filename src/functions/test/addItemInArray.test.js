@@ -7,9 +7,9 @@ describe('addItemInArray function', () => {
     expect(addItemInArray([], {})).toStrictEqual([]);
     expect(addItemInArray()).toStrictEqual([]);
     expect(addItemInArray(null, null)).toStrictEqual([]);
-    expect(addItemInArray(1.99, 0.70)).toStrictEqual([]);
-    expect(addItemInArray(1.99, 'John')).toStrictEqual([]);
-    expect(addItemInArray('John', 1.99)).toStrictEqual([]);
+    expect(addItemInArray(199, 70)).toStrictEqual([]);
+    expect(addItemInArray(199, 'John')).toStrictEqual([]);
+    expect(addItemInArray('John', 199)).toStrictEqual([]);
     expect(addItemInArray('John', 'Doe')).toStrictEqual([]);
   });
 

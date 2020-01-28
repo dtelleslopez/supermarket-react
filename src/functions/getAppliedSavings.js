@@ -23,13 +23,13 @@ const getAppliedSavings = (items = [], offers = []) => {
         if (offer.type === offerTypes.THREE_FOR_TWO && items[i].quantity > 2) {
           const offerCount = Math.floor(quantity / 3);
           const offerDiff = quantity % 3;
-          const discount = quantityPrice - (((offerCount * 2) * price) + (offerDiff) * price);
+          const discount = quantityPrice - (((offerCount * 2) * price) + (offerDiff * price));
 
           applied.push({ ...offer, discount: fixTwoDecimals(discount) });
         } else if (offer.type === offerTypes.TWO_FOR_AMOUNT && items[i].quantity >= 2) {
           const offerCount = Math.floor(quantity / 2);
           const offerDiff = quantity % 2;
-          const discount = quantityPrice - (offerCount + (offerDiff * price));
+          const discount = quantityPrice - ((100 * offerCount) + (offerDiff * price));
 
           applied.push({ ...offer, discount: fixTwoDecimals(discount) });
         }

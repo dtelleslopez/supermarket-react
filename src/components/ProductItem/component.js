@@ -34,7 +34,7 @@ const ProductItem = ({
         <Column align="right">
           <Price>
             £
-            {price}
+            {price / 100}
             {unitType(unit)}
           </Price>
           <Delete data-cy="delete-product" onClick={handleOnClick}>✕</Delete>

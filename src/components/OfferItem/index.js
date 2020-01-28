@@ -16,7 +16,7 @@ const OfferItem = ({ name, discount }) => (
       <Column align="right">
         <Discount>
           £-
-          {discount}
+          {discount / 100}
         </Discount>
       </Column>
     </Row>

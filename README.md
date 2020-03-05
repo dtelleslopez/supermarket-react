@@ -4,6 +4,9 @@ This project is part of Policy Expert - Home Code Assessment.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Live demo
+[https://blissful-elion-cdff02.netlify.com/](https://blissful-elion-cdff02.netlify.com/)
+
 ## Available Scripts
 
 In the project directory, you can run:
